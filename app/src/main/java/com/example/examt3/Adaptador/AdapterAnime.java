@@ -20,7 +20,7 @@ import com.example.examt3.R;
 import java.util.ArrayList;
 
 public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.AnimeViewHolder>{
-    private boolean favorito = true;
+
     ArrayList<MainActivity.Anime> mData;
     Context context;
 
@@ -45,36 +45,12 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.AnimeViewHol
         TextView nombre = holder.itemView.findViewById(R.id.nombre);
         TextView descri = holder.itemView.findViewById(R.id.info);
         ImageView image = holder.itemView.findViewById(R.id.imagen);
-/*
-        ImageButton boton = holder.itemView.findViewById(R.id.estrella);
 
-        int pos = boton.getTop();
-
-        Log.i("MYAPP","numero de boton: " + pos);
-
-        boton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if(favorito){
-                    favorito = false;
-                    boton.setImageResource(R.drawable.favorito);
-                    Toast.makeText(context.getApplicationContext(),"Añadido a favoritos", Toast.LENGTH_LONG).show();
-                }else
-                {
-                    favorito = true;
-                    boton.setImageResource(R.drawable.no_favorito);
-                    Toast.makeText(context.getApplicationContext(),"Eliminado de favoritos", Toast.LENGTH_LONG).show();
-
-                }
-            }
-        });*/
-
-        String nomb = mData.get(position).getTitulo();
-        String desc = mData.get(position).getDescripcion();
+        String anime = mData.get(position).getTitulo();
+        String inf = mData.get(position).getDescripcion();
         String imag = mData.get(position).getImage();
-        nombre.setText(nomb);
-        descri.setText(desc);
+        nombre.setText(anime);
+        descri.setText(inf);
         Glide.with(context).load(imag).into(image);
 
     }
@@ -91,5 +67,4 @@ public class AdapterAnime extends RecyclerView.Adapter<AdapterAnime.AnimeViewHol
             this.context = context;
         }
     }
-
 }
