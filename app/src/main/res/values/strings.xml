@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">ExamT3</string>
+    <string name="app_name">holaMundo</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
